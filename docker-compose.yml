@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+    naming-server:
+        ports:
+            - "8761:8761"
+        image: "thucvu164/smdemo-naming-server:0.0.1"
+    config-server:
+        ports:
+            - "9000:9000"
+        image: "thucvu164/smdemo-config-server:0.0.1"
