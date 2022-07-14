@@ -20,4 +20,6 @@ public class UserEntity {
     private String role;
 
     private Integer shopId;
+
+    private boolean active = true;
 }
