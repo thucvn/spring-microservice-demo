@@ -76,6 +76,11 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>com.uu.mircroservice</groupId>
+            <artifactId>core</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <scope>test</scope>

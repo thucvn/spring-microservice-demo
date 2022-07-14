@@ -1,3 +1,3 @@
-insert into `user`(`id`, `name`, `username`, `password`, `role`, `shop_id`, `active`) values (1, 'user 1', 'thucvn', '123', 'admin', null, true);
-insert into `user`(`id`, `name`, `username`, `password`, `role`, `shop_id`, `active`) values (2, 'user 2', 'shop1', '123','shop_owner', 1, true);
-insert into `user`(`id`, `name`, `username`, `password`, `role`, `shop_id`, `active`) values (3, 'user 3', 'emp1', '123', 'employee', 1, true);
+insert into `user`(`id`, `name`, `username`, `password`, `role`, `shop_id`, `active`) values (1, 'User 1', 'thucvn', '$2a$10$JKHmjlrs08Qt0IKEq2Nf2enU7WN4shsdtmFz8k/Vj2R/k7P1rTlRG', 'ADMIN', null, true);
+insert into `user`(`id`, `name`, `username`, `password`, `role`, `shop_id`, `active`) values (2, 'User 2', 'shop1', '$2a$10$JKHmjlrs08Qt0IKEq2Nf2enU7WN4shsdtmFz8k/Vj2R/k7P1rTlRG','SHOP_OWNER', 1, true);
+insert into `user`(`id`, `name`, `username`, `password`, `role`, `shop_id`, `active`) values (3, 'User 3', 'emp1', '$2a$10$JKHmjlrs08Qt0IKEq2Nf2enU7WN4shsdtmFz8k/Vj2R/k7P1rTlRG', 'EMPLOYEE', 1, true);
