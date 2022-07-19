@@ -3,10 +3,13 @@ package com.uu.microservice.coreproxy.security;
 import com.uu.microservice.core.jwt.JwtTokenData;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.security.Principal;
 import java.util.Collection;
+import java.util.List;
+
 @Data
 public class UserPrincipal implements UserDetails, Principal {
     private JwtTokenData data;
@@ -18,7 +21,7 @@ public class UserPrincipal implements UserDetails, Principal {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return List.of(new SimpleGrantedAuthority(data.getRole()));
     }
 
     @Override
