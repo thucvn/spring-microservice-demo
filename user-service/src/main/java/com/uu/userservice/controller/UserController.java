@@ -4,6 +4,7 @@ import com.uu.userservice.repository.model.UserEntity;
 import com.uu.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("")
-    public List<UserEntity> list() {
+    public List<UserEntity> list(@RequestHeader("AuthorInfo") String header) {
+        System.out.println(header);
         return userService.listAll();
     }
 }

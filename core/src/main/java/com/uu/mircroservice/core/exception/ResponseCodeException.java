@@ -1,7 +1,9 @@
 package com.uu.mircroservice.core.exception;
 
-import org.springframework.http.HttpStatus;
 import com.uu.mircroservice.core.config.Error;
+import lombok.Data;
+import org.springframework.http.HttpStatus;
+@Data
 public class ResponseCodeException extends RuntimeException {
     Error error;
     HttpStatus status = HttpStatus.BAD_REQUEST;

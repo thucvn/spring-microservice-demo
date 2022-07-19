@@ -3,6 +3,7 @@ package com.uu.userservice.service;
 import com.uu.mircroservice.core.jwt.JwtConfig;
 import com.uu.mircroservice.core.jwt.JwtTokenData;
 import com.uu.mircroservice.core.utils.ReflectionUtils;
+import com.uu.userservice.feignInteface.ProductInterface;
 import com.uu.userservice.payload.request.LoginRequest;
 import com.uu.userservice.payload.response.LoginResponse;
 import com.uu.userservice.repository.UserRepository;
@@ -21,11 +22,15 @@ public class UserService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
+    private final ProductInterface productInterface;
+
     public List<UserEntity> listAll() {
+        System.out.println(productInterface.getAll());
         return userRepository.findAll();
     }
 
     public LoginResponse login(LoginRequest loginRequest) {
+
         var userOp = userRepository.findByUsernameAndActiveIsTrue(loginRequest.getUsername().trim().toLowerCase());
         if (userOp.isPresent()) {
             // user exists and generate

@@ -28,7 +28,7 @@ public class JwtConfig {
                 .compact();
     }
 
-    public boolean validateToken(String authToken) {
+    public static boolean validateToken(String authToken) {
         try {
             Jwts.parser().setSigningKey(KEY).parseClaimsJws(authToken);
             return true;
@@ -45,5 +45,15 @@ public class JwtConfig {
             log.error("JWT claims string is empty.");
             throw new ResponseCodeException(Error.TOKEN_NOT_VALID);
         }
+    }
+
+    public static JwtTokenData getTokenData(String jwt) {
+        Claims claims = Jwts.parser().setSigningKey(KEY).parseClaimsJws(jwt).getBody();
+        JwtTokenData tokenData = new JwtTokenData();
+        tokenData.setId(Integer.valueOf(claims.getSubject()));
+        tokenData.setUsername(claims.get("username", String.class));
+        tokenData.setRole(claims.get("role", String.class));
+        tokenData.setShopId(claims.get("shopId", Integer.class));
+        return tokenData;
     }
 }
