@@ -1,6 +1,6 @@
-package com.uu.mircroservice.core.exception;
+package com.uu.microservice.core.exception;
 
-import com.uu.mircroservice.core.config.Error;
+import com.uu.microservice.core.config.Error;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 @Data

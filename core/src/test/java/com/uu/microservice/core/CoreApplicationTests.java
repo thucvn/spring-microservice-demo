@@ -1,4 +1,4 @@
-package com.uu.mircroservice.core;
+package com.uu.microservice.core;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

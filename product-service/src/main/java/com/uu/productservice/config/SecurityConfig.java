@@ -1,6 +1,5 @@
-package com.uu.userservice.config;
+package com.uu.productservice.config;
 
-import com.uu.microservice.coreproxy.security.HeaderAuthorizationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -10,14 +9,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-    private final HeaderAuthorizationFilter headerAuthorizationFilter;
+//    private final HeaderAuthorizationFilter headerAuthorizationFilter;
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -32,7 +30,7 @@ public class SecurityConfig {
                 .antMatchers("/**")
                 .permitAll()
                 .anyRequest().authenticated();
-        http.addFilterBefore(headerAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
+//        http.addFilterBefore(headerAuthorizationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 }

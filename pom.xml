@@ -7,7 +7,7 @@
 
 	<!-- parent pom -->
     <groupId>com.uu</groupId>
-    <artifactId>spring-micorservice-demo</artifactId>
+    <artifactId>spring-microservice-demo</artifactId>
     <packaging>pom</packaging>
 	<version>1.0</version>
     <properties>

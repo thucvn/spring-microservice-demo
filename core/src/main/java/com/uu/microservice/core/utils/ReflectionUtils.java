@@ -1,4 +1,4 @@
-package com.uu.mircroservice.core.utils;
+package com.uu.microservice.core.utils;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;

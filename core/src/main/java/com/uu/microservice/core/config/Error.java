@@ -1,4 +1,4 @@
-package com.uu.mircroservice.core.config;
+package com.uu.microservice.core.config;
 
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.core.JsonProcessingException;

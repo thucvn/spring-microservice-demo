@@ -1,11 +1,11 @@
 package com.uu.apigateway.security;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.uu.mircroservice.core.config.Error;
-import com.uu.mircroservice.core.exception.ResponseCodeException;
-import com.uu.mircroservice.core.jwt.JwtConfig;
-import com.uu.mircroservice.core.jwt.JwtTokenData;
+import com.uu.microservice.core.config.Constants;
+import com.uu.microservice.core.config.Error;
+import com.uu.microservice.core.exception.ResponseCodeException;
+import com.uu.microservice.core.jwt.JwtConfig;
+import com.uu.microservice.core.jwt.JwtTokenData;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.http.server.reactive.ServerHttpRequest;
@@ -31,11 +31,10 @@ public class JwtAuthenFilter implements GlobalFilter {
         ServerHttpRequest.Builder builder = exchange.getRequest().mutate();
         if (StringUtils.hasText(jwt) && JwtConfig.validateToken(jwt)) {
             JwtTokenData data = JwtConfig.getTokenData(jwt);
-            ObjectMapper objectMapper = new ObjectMapper();
             builder.headers(httpHeaders -> {
-                httpHeaders.remove("AuthorInfo");
+                httpHeaders.remove(Constants.HEADER_AUTHOR);
                 try {
-                    httpHeaders.set("AuthorInfo", objectMapper.writeValueAsString(data));
+                    httpHeaders.set(Constants.HEADER_AUTHOR, data.json());
                 } catch (JsonProcessingException e) {
                     throw new ResponseCodeException(Error.TOKEN_NOT_VALID);
                 }

@@ -1,5 +1,6 @@
 package com.uu.userservice.controller;
 
+import com.uu.microservice.core.config.Constants;
 import com.uu.userservice.repository.model.UserEntity;
 import com.uu.userservice.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("")
-    public List<UserEntity> list(@RequestHeader("AuthorInfo") String header) {
+    public List<UserEntity> list(@RequestHeader(Constants.HEADER_AUTHOR) String header) {
         System.out.println(header);
         return userService.listAll();
     }

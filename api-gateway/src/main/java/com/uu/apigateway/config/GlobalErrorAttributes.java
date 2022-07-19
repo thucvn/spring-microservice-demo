@@ -1,9 +1,8 @@
 package com.uu.apigateway.config;
 
-import com.uu.mircroservice.core.exception.ResponseCodeException;
+import com.uu.microservice.core.exception.ResponseCodeException;
 import org.springframework.boot.web.error.ErrorAttributeOptions;
 import org.springframework.boot.web.reactive.error.DefaultErrorAttributes;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.server.ServerRequest;
 

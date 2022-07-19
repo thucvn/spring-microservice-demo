@@ -1,6 +1,6 @@
 package com.uu.apigateway.config;
 
-import com.uu.mircroservice.core.exception.ResponseCodeException;
+import com.uu.microservice.core.exception.ResponseCodeException;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.boot.autoconfigure.web.reactive.error.AbstractErrorWebExceptionHandler;
 import org.springframework.boot.web.error.ErrorAttributeOptions;

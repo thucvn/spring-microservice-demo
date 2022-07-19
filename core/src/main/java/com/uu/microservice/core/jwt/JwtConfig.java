@@ -1,13 +1,14 @@
-package com.uu.mircroservice.core.jwt;
+package com.uu.microservice.core.jwt;
 
-import com.uu.mircroservice.core.config.Constants;
-import com.uu.mircroservice.core.exception.ResponseCodeException;
+import com.uu.microservice.core.config.Constants;
+import com.uu.microservice.core.config.Error;
+import com.uu.microservice.core.exception.ResponseCodeException;
 import io.jsonwebtoken.*;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.ZonedDateTime;
 import java.util.Date;
-import com.uu.mircroservice.core.config.Error;
+
 @Slf4j
 public class JwtConfig {
     private static final String KEY = "bDRpNTqfRZXnqVNBWNOf1C";

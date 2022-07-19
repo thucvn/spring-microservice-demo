@@ -1,8 +1,8 @@
 package com.uu.userservice.service;
 
-import com.uu.mircroservice.core.jwt.JwtConfig;
-import com.uu.mircroservice.core.jwt.JwtTokenData;
-import com.uu.mircroservice.core.utils.ReflectionUtils;
+import com.uu.microservice.core.jwt.JwtConfig;
+import com.uu.microservice.core.jwt.JwtTokenData;
+import com.uu.microservice.core.utils.ReflectionUtils;
 import com.uu.userservice.feignInteface.ProductInterface;
 import com.uu.userservice.payload.request.LoginRequest;
 import com.uu.userservice.payload.response.LoginResponse;

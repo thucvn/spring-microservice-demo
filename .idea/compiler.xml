@@ -7,10 +7,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-gateway" />
         <module name="config-server" />
-        <module name="product-service" />
         <module name="core" />
+        <module name="api-gateway" />
+        <module name="core-proxy" />
+        <module name="product-service" />
         <module name="user-service" />
         <module name="naming-server" />
       </profile>
@@ -21,6 +22,7 @@
       <module name="api-gateway" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="core" options="-parameters" />
+      <module name="core-proxy" options="-parameters" />
       <module name="naming-server" options="-parameters" />
       <module name="product-service" options="-parameters" />
       <module name="user-service" options="-parameters" />

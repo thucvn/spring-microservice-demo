@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.uu</groupId>
-		<artifactId>spring-micorservice-demo</artifactId>
+		<artifactId>spring-microservice-demo</artifactId>
 		<version>1.0</version>
 	</parent>
 	<artifactId>api-gateway</artifactId>
@@ -18,7 +18,7 @@
 			<artifactId>spring-cloud-starter</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.uu.mircroservice</groupId>
+			<groupId>com.uu.microservice</groupId>
 			<artifactId>core</artifactId>
 			<version>0.0.1</version>
 		</dependency>

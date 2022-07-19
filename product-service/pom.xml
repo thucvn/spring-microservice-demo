@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>com.uu</groupId>
-        <artifactId>spring-micorservice-demo</artifactId>
+        <artifactId>spring-microservice-demo</artifactId>
         <version>1.0</version>
     </parent>
     <artifactId>product-service</artifactId>
@@ -15,6 +15,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.uu.microservice</groupId>
+            <artifactId>core-proxy</artifactId>
+            <version>0.0.1</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
