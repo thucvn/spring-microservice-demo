@@ -13,6 +13,11 @@ public class ResponseCodeException extends RuntimeException {
         this.status = status;
     }
 
+    public ResponseCodeException(int status, Error error) {
+        this(error);
+        this.status = HttpStatus.valueOf(status);
+    }
+
     public ResponseCodeException(Error error) {
         super();
         this.error = error;

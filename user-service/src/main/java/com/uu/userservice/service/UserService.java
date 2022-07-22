@@ -25,7 +25,8 @@ public class UserService {
     private final ProductInterface productInterface;
 
     public List<UserEntity> listAll() {
-        System.out.println(productInterface.getAll());
+//        System.out.println(productInterface.getAll());
+        System.out.println(productInterface.testErrorSystem());
         return userRepository.findAll();
     }
 

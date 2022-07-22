@@ -13,5 +13,11 @@ import java.util.List;
 public interface ProductInterface {
     @RequestMapping(value = "product")
     List<ProductDTO> getAll();
+
+    @RequestMapping(value = "product/error")
+    ProductDTO testError();
+
+    @RequestMapping(value = "product/errorSystem")
+    ProductDTO testErrorSystem();
 }
 

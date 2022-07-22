@@ -19,8 +19,6 @@ public class FeignAuthenInterceptor implements RequestInterceptor {
                 System.out.println(((UserPrincipal)authen.getPrincipal()).getData());
                 var str = ((UserPrincipal)authen.getPrincipal()).getData().jsonRfc6570();
                 requestTemplate.header(Constants.HEADER_AUTHOR, str);
-                requestTemplate.header("abc", "1234454");
-                requestTemplate.header("abcd", "%7B\"thucvn\": \"a\", \"x\": 123123null%7D");
             } catch (JsonProcessingException e) {
                 System.out.println("err " + e);
             }

@@ -7,13 +7,16 @@ import lombok.Getter;
 
 import java.util.HashMap;
 import java.util.Map;
+
 @Getter
 public enum Error {
 
+    TEST_EXCEPTION("This is the error for testing purpose!"),
     INVALID_INPUT("The input data is not valid, please check again!"),
     TOKEN_EXPIRED("Token login is expired, please login again!"),
     TOKEN_NOT_VALID("Token is not valid, please try again!");
     private String message;
+
     Error(String message) {
         this.message = message;
     }
@@ -34,5 +37,13 @@ public enum Error {
         val.put("code", this.name());
         val.put("message", this.getMessage());
         return val;
+    }
+
+    public static Error valueOfNull(String code) {
+        try {
+            return Error.valueOf(code);
+        } catch (Exception ignored) {
+            return null;
+        }
     }
 }
