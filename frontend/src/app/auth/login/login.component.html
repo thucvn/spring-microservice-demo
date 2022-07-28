@@ -1,0 +1,32 @@
+<div class="container-sm mt-3" style="max-width: 900px">
+  <div class="card">
+    <div class="card-header">
+      Please login to system
+    </div>
+    <div class="card-body">
+      <form class="" [formGroup]="loginForm">
+        <div class="form-group border rounded">
+          <div class="input-group">
+            <span class="input-group-text" id="username"><i class="fal fa-user"></i></span>
+            <input type="text" class="form-control" placeholder="Username"
+                   aria-label="Username"
+                   aria-describedby="username" value="" formControlName="username">
+          </div>
+        </div>
+
+        <div class="form-group mt-3 border rounded">
+          <div class="input-group">
+            <span class="input-group-text"><i class="fal fa-unlock-alt"></i></span>
+            <input id="password-field" type="password" class="form-control" name="password" value=""
+                   placeholder="Password" formControlName="password">
+          </div>
+        </div>
+        <hr/>
+        <div class="form-group d-grid mt-3">
+          <button type="button" class="btn btn-primary" id="btn-submit" ><strong>Login</strong></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
