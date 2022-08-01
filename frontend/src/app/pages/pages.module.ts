@@ -1,9 +1,12 @@
 import {NgModule} from "@angular/core";
 import {PagesComponent} from "./pages.component";
 import {PagesRoutingModule} from "./pages-routing.module";
+import {HeaderComponent} from "./@core/header/header.component";
 
 @NgModule({
-  declarations: [PagesComponent
+  declarations: [
+    PagesComponent,
+    HeaderComponent
   ],
   providers: [
   ],

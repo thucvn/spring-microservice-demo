@@ -1,5 +1,6 @@
 import {Injectable} from "@angular/core";
-import {Observable, of} from "rxjs";
+import {forkJoin, Observable, of} from "rxjs";
+import {CredentialModel} from "../../pages/@core/credential.model";
 
 export enum StorageKey {
   ACCESS_TOKEN = 'accessToken',
@@ -34,5 +35,29 @@ export class TokenStorage {
       localStorage.setItem(StorageKey.USER_PROFILE, JSON.stringify(profile));
     }
     return this;
+  }
+
+  public getUserProfile(): CredentialModel | undefined {
+    const userInfo: any = localStorage.getItem(StorageKey.USER_PROFILE);
+    try {
+      const item = JSON.parse(userInfo);
+      return item;
+    } catch (e) {
+      return undefined;
+    }
+  }
+  public removeItem(key: string): Observable<void> {
+    return of(localStorage.removeItem(key));
+  }
+
+  public clear(): Observable<any> {
+    const deleteKeys = [StorageKey.ACCESS_TOKEN,
+      StorageKey.USER_PROFILE, StorageKey.USER_ROLES,
+      StorageKey.MENU_LIST];
+    const taskRemove$: any[] = [];
+    deleteKeys.forEach(key => {
+      taskRemove$.push(this.removeItem(key));
+    });
+    return forkJoin(taskRemove$);
   }
 }
