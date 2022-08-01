@@ -4,18 +4,20 @@ import {LoginComponent} from "./login/login.component";
 import {AuthComponent} from "./auth.component";
 import {AuthRoutingModule} from "./auth-routing.module";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
     LoginComponent,
     AuthComponent
   ],
-  imports: [
-    SharedModule,
-    AuthRoutingModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        SharedModule,
+        AuthRoutingModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+    ],
   providers: [
   ]
 })

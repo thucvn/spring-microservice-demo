@@ -18,12 +18,14 @@
           <div class="input-group">
             <span class="input-group-text"><i class="fal fa-unlock-alt"></i></span>
             <input id="password-field" type="password" class="form-control" name="password" value=""
-                   placeholder="Password" formControlName="password">
+                   placeholder="Password" formControlName="password" (keyup.enter)="login()">
           </div>
         </div>
         <hr/>
         <div class="form-group d-grid mt-3">
-          <button type="button" class="btn btn-primary" id="btn-submit" ><strong>Login</strong></button>
+          <button type="button" class="btn btn-primary" id="btn-submit" (click)="login()" [disabled]="isLoading">
+            <strong><i class="fal fa-spinner fa-spin" *ngIf="isLoading"></i> Login</strong>
+          </button>
         </div>
       </form>
     </div>

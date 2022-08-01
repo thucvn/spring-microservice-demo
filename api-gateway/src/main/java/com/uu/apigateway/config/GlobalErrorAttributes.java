@@ -17,7 +17,7 @@ public class GlobalErrorAttributes extends DefaultErrorAttributes {
         Map<String, Object> map = super.getErrorAttributes(request, options);
         Throwable throwable = getError(request);
         if (throwable instanceof ResponseCodeException) {
-            map.put("status", ((ResponseCodeException) throwable).getStatus());
+            map.put("status", ((ResponseCodeException) throwable).getStatus().value());
             map.put("code", ((ResponseCodeException) throwable).getError().name());
             map.put("message", ((ResponseCodeException) throwable).getError().getMessage());
         }

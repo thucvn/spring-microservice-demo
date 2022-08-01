@@ -40,7 +40,7 @@ public class GlobalErrorWebExceptionHandler extends AbstractErrorWebExceptionHan
 
         Map<String, Object> errorPropertiesMap = getErrorAttributes(request, ErrorAttributeOptions.defaults());
         Throwable throwable = getError(request);
-        var builder = ServerResponse.status(HttpStatus.BAD_REQUEST);
+        var builder = ServerResponse.status((Integer) errorPropertiesMap.get("status"));
         if (throwable instanceof ResponseCodeException) {
             builder = ServerResponse.status(((ResponseCodeException) throwable).getStatus());
         }

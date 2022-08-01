@@ -25,6 +25,11 @@ public class UserController {
         return userService.listAll();
     }
 
+    @GetMapping("abc")
+    public List<UserEntity> abc() {
+        return userService.listAll();
+    }
+
     @GetMapping("error")
     public void test() {
         throw new ResponseCodeException(Error.TOKEN_EXPIRED);

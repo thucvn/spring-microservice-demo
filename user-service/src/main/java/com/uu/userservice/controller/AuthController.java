@@ -1,5 +1,7 @@
 package com.uu.userservice.controller;
 
+import com.uu.microservice.core.config.Error;
+import com.uu.microservice.core.exception.ResponseCodeException;
 import com.uu.userservice.payload.request.LoginRequest;
 import com.uu.userservice.payload.response.LoginResponse;
 import com.uu.userservice.service.UserService;
@@ -17,7 +19,7 @@ public class AuthController {
     @PostMapping("login")
     public LoginResponse login(@RequestBody LoginRequest loginRequest) {
         var re = userService.login(loginRequest);
-        if (re == null) throw new RuntimeException("WRONG CREDENTIAL");
+        if (re == null) throw new ResponseCodeException(Error.WRONG_CREDENTIAL);
         return re;
     }
 }

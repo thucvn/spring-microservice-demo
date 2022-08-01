@@ -40,7 +40,6 @@ public class JwtAuthenFilter implements GlobalFilter {
                 }
             });
         }
-
         return chain.filter(exchange.mutate().request(builder.build()).build());
     }
 }

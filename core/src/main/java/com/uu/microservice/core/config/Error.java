@@ -12,6 +12,8 @@ import java.util.Map;
 public enum Error {
 
     TEST_EXCEPTION("This is the error for testing purpose!"),
+
+    WRONG_CREDENTIAL("The user and password did not match!"),
     INVALID_INPUT("The input data is not valid, please check again!"),
     TOKEN_EXPIRED("Token login is expired, please login again!"),
     TOKEN_NOT_VALID("Token is not valid, please try again!");

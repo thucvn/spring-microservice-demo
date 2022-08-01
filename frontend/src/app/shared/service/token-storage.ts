@@ -13,8 +13,26 @@ export enum StorageKey {
   providedIn: 'root'
 })
 export class TokenStorage {
+
   public getAccessToken(): Observable<string> {
     const token: any = localStorage.getItem(StorageKey.ACCESS_TOKEN);
     return of(token);
+  }
+
+  public getTokenStr(): string {
+    return localStorage.getItem(StorageKey.ACCESS_TOKEN) as string;
+  }
+
+  public setAccessToken(token: string): TokenStorage {
+    localStorage.setItem(StorageKey.ACCESS_TOKEN, token);
+    return this;
+  }
+
+  public setUserProfile(profile: any): any {
+    if (profile != null) {
+      delete profile.token;
+      localStorage.setItem(StorageKey.USER_PROFILE, JSON.stringify(profile));
+    }
+    return this;
   }
 }
