@@ -43,6 +43,26 @@
   color: inherit;
 }
 
+.nav-menu .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-menu .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.nav-menu .nav-link.active {
+  color: #2470dc;
+}
+
+.nav-menu .nav-link:hover .feather,
+.nav-menu .nav-link.active .feather {
+  color: inherit;
+}
+
+
 .sidebar-heading {
   font-size: .75rem;
 }

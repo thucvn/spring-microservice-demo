@@ -5,6 +5,7 @@ import {HeaderComponent} from "./@core/header/header.component";
 import {SidebarComponent} from "./@core/sidebar/sidebar.component";
 import {FooterComponent} from "./@core/footer/footer.component";
 import {HomeComponent} from "./@core/home/home.component";
+import {MenuItemComponent} from "./@core/sidebar/menu-item.component";
 
 @NgModule({
   declarations: [
@@ -12,13 +13,15 @@ import {HomeComponent} from "./@core/home/home.component";
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    MenuItemComponent
   ],
   providers: [
   ],
   imports: [
     PagesRoutingModule,
-  ]
+  ],
+  exports: [MenuItemComponent]
 })
 export class PagesModule {
 

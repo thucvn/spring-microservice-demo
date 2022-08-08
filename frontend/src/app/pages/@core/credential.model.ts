@@ -2,6 +2,6 @@ export class CredentialModel {
   id?: number;
   name?: string;
   username?: string;
-  role?: string;
+  type?: string;
   shopId?: number;
 }

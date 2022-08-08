@@ -1,6 +1,7 @@
 export abstract class ApiContext {
 
   public readonly api = {
-    user: 'user-service'
+    user: 'user-service',
+    product: 'product-service'
   };
 }

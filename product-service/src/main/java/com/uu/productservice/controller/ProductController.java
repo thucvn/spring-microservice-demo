@@ -1,20 +1,16 @@
 package com.uu.productservice.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.uu.microservice.core.config.Constants;
 import com.uu.microservice.core.config.Error;
 import com.uu.microservice.core.exception.ResponseCodeException;
-import com.uu.microservice.core.jwt.JwtTokenData;
 import com.uu.productservice.repository.model.Product;
 import com.uu.productservice.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -23,15 +19,8 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping("")
-    public List<Product> getAll(@RequestHeader(value = Constants.HEADER_AUTHOR, required = false) String header
-                                ) {
-        try {
-            JwtTokenData data = JwtTokenData.fromJson(header);
-            System.out.println(data);
-        } catch (JsonProcessingException e) {
-            e.printStackTrace();
-        }
-        return productService.getAll();
+    public Page<Product> getAll(@RequestParam String keyword, @RequestParam int page, @RequestParam int pageSize) {
+        return productService.getAll(keyword, page, pageSize);
     }
 
     @GetMapping("error")

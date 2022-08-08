@@ -38,6 +38,7 @@ public class UserService {
             UserEntity user = userOp.get();
             if (passwordEncoder.matches(loginRequest.getPassword(), user.getPassword())) {
                 JwtTokenData tokenData = ReflectionUtils.copyValue(user, JwtTokenData.class);
+                tokenData.setType(user.getType().name());
                 String token = JwtConfig.generateToken(tokenData);
                 return new LoginResponse(user).accessToken(token);
             }

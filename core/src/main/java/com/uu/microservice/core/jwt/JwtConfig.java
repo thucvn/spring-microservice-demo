@@ -24,7 +24,7 @@ public class JwtConfig {
                 .setExpiration(Date.from(expiryDate.toInstant()))
                 .claim("username", user.getUsername())
                 .claim("shopId", user.getShopId())
-                .claim("role", user.getRole())
+                .claim("type", user.getType())
                 .signWith(SignatureAlgorithm.HS512, KEY)
                 .compact();
     }
@@ -53,7 +53,7 @@ public class JwtConfig {
         JwtTokenData tokenData = new JwtTokenData();
         tokenData.setId(Integer.valueOf(claims.getSubject()));
         tokenData.setUsername(claims.get("username", String.class));
-        tokenData.setRole(claims.get("role", String.class));
+        tokenData.setType(claims.get("type", String.class));
         tokenData.setShopId(claims.get("shopId", Integer.class));
         return tokenData;
     }

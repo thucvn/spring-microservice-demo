@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 public class JwtTokenData {
     private Integer id, shopId;
-    private String username, role;
+    private String username, type;
 
     public String json() throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();

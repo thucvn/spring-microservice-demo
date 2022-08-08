@@ -9,7 +9,8 @@ public class LoginResponse {
     private String name;
 
     private String username;
-    private String role;
+
+    private String type;
 
     private Integer shopId;
     private String token;
@@ -18,7 +19,7 @@ public class LoginResponse {
         this.id = entity.getId();
         this.name = entity.getName();
         this.username = entity.getUsername();
-        this.role = entity.getRole();
+        this.type = entity.getType().name();
         this.shopId = entity.getShopId();
     }
 

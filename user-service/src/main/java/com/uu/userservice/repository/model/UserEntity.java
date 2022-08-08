@@ -1,6 +1,8 @@
 package com.uu.userservice.repository.model;
 
+import com.uu.microservice.core.config.UserType;
 import lombok.Data;
+import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -15,9 +17,10 @@ public class UserEntity {
 
     private String username;
 
+    @JsonIgnore
     private String password;
-
-    private String role;
+    @Enumerated(EnumType.STRING)
+    private UserType type;
 
     private Integer shopId;
 

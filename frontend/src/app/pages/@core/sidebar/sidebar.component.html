@@ -1,24 +1,16 @@
 <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
   <div class="position-sticky pt-3 sidebar-sticky">
     <ul class="nav flex-column">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">
-          <i class="fal fa-home"></i>
-          Dashboard
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fal fa-users"></i>
-          Users
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fal fa-shopping-cart"></i>
-          Products
-        </a>
-      </li>
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" href="#" (click)="route($event, '/pages')">-->
+<!--          <i class="fal fa-home"></i>-->
+<!--          Dashboard-->
+<!--        </a>-->
+<!--      </li>-->
+
+      <app-menu-item icon="fal fa-home" name="Dashboard" link="/pages"></app-menu-item>
+      <app-menu-item icon="fal fa-users" name="Users" link="/pages/user"></app-menu-item>
+      <app-menu-item icon="fal fa-shopping-cart" name="Products" link="/pages/product"></app-menu-item>
       <li class="nav-item">
         <a class="nav-link" href="#">
           <i class="fal fa-university"></i>
